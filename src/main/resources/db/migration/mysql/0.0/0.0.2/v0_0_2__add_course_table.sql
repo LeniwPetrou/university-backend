@@ -1,6 +1,7 @@
-create table if not exists student (
+create table if not exists course (
     id bigint(10) auto_increment not null primary key,
-    firstname varchar(100) not null,
-    lastname varchar(100) not null,
-    email varchar(100) not null
+    code varchar(100) not null,
+    description varchar(100) not null,
+    user_id bigint(10),
+    FOREIGN KEY (user_id) REFERENCES users(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
